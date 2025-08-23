@@ -1,27 +1,16 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import {serviceEndPoints, API_HEADERS} from './../Constants/constants'
+import useSetTrailerBg from './../customHooks/setTrailerBg'
 
 function Videobackground({movieId}) {
-
-    console.log(movieId)
-
-    const url = `${serviceEndPoints.videos}${movieId}/videos`
-
-    async function getVideos(){
-        console.log('API call')
-        const videos = await fetch(url, API_HEADERS)
-        const videosData = await videos.json()
-        console.log(videosData)
-    }
-
-    useEffect(()=>{
-        if(movieId){
-            getVideos()
-        }
-    },[])
+    const trailer = useSetTrailerBg(movieId)+ "?&autoplay=1&mute=1"
 
   return (
-    <div>Videobackground</div>
+    <div className='w-screen'>
+        <iframe className='w-screen aspect-video'
+     src={trailer} 
+     title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+    </div>
   )
 }
 
