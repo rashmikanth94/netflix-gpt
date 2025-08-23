@@ -12,7 +12,7 @@ function MovieList({title, movies}) {
         <div className='flex overflow-x-scroll' >
             <div className='flex'>
                 {
-                    movies.map((movie)=>{
+                    movies?.map((movie)=>{
                         return(
                             <MovieCard key={movie.id} movie={movie}/>
                         )
