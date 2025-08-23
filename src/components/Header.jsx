@@ -39,7 +39,7 @@ const Header = () => {
           <img 
             className="w-10 h-10"
             src={BODY_BACKGROUND} />
-            <button className="font-bold cursor-pointer" onClick={handleSignout}>Sign out</button>
+            <button className="font-bold cursor-pointer text-white" onClick={handleSignout}>Sign out</button>
           </div>
         </div>
       }

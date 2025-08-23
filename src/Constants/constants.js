@@ -13,5 +13,8 @@ export const API_HEADERS = {
 
 export const serviceEndPoints = {
     movies:'https://api.themoviedb.org/3/movie/now_playing',
+    trMovies:'https://api.themoviedb.org/3/movie/top_rated',
+    upcomingMovies:'https://api.themoviedb.org/3/movie/upcoming',
+    popularMovies:'https://api.themoviedb.org/3/movie/popular',
     videos:'https://api.themoviedb.org/3/movie/'
 }
